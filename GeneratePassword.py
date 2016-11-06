@@ -25,7 +25,10 @@ def main():
     print str(NUMBER_OF_WORDS_IN_PASSWORD) + " RANDOM words from word list of " + str(len(dictionaryWords)) + " words"
 
     #TODO calculate entropy
-    #print "Entropy:" + str(round(math.log(math.pow(len(dictionaryWords),NUMBER_OF_WORDS_IN_PASSWORD), 
+    entropyOld = round(math.log(math.pow(len(dictionaryWords),NUMBER_OF_WORDS_IN_PASSWORD),2),2)
+    entropyNew = entropyOld / math.log(62,2)
+    print "Entropy:" + str(entropyOld) + " bits"
+    print "You need "  + str(round(entropyNew)) + " RANDOM characters in [a-zA-Z0-9] to get the same entropy."
         
 if __name__ == "__main__":
     main()
